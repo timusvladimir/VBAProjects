@@ -1,0 +1,22 @@
+Sub CreateAndWriteExcelFile()
+    Dim wb As Workbook
+    Dim ws As Worksheet
+    
+    ' Создание нового книги
+    Set wb = Workbooks.Add
+    
+    ' Указание на первый лист
+    Set ws = wb.Sheets(1)
+    
+    ' Запись данных в диапазон A1:B2
+    ws.Range("A1").Value = "Заголовок 1"
+    ws.Range("B1").Value = "Заголовок 2"
+    ws.Range("A2").Value = "Данные 1"
+    ws.Range("B2").Value = "Данные 2"
+    
+    ' Сохранение книги
+    wb.SaveAs Filename:="C:\Path\To\Your\NewFile.xlsx"
+    
+    ' Закрытие книги
+    wb.Close SaveChanges:=True
+End Sub
